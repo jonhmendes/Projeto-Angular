@@ -1,0 +1,24 @@
+<div>
+<form>
+ 
+    <h2>Inicio</h2>
+    {{produtosfiltro | json}}
+     <br/>
+ 
+<h2>Parte 1</h2>
+
+ <div *ngIf="visibilidade">
+  <p *ngFor="let item of produtos; let i = index">
+  Linha {{i}} :  Nome : {{item.nome}} 
+  </p>
+ </div>
+
+  <button (click)="mostra()">Mostrar os Produtos</button>
+  <br/>
+  <button (click)="esconde()">Esconder os Produtos</button>
+
+
+  <button (click)="mostrarMapa()">Atualiza</button>
+
+</form>
+</div>

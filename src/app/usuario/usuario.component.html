@@ -1,0 +1,50 @@
+<div>
+
+    <h2>Lista.... Angular 2 Componentes</h2>
+     <ul *ngFor="let p of listaUsuario">
+         <li> {{p.codigo}}, {{p.login}}, {{p.senha}}</li>
+     </ul>
+
+
+     <br/><br/>
+     <h3>Select ...</h3>
+     Dados<select name="dados" id="dados" [(ngModel)]="escolha">
+          <option values="">Selecione</option>
+           <option *ngFor="let p of listaUsuario" [value]="p.login">
+             {{p.login}}
+           </option>    
+   </select>
+       
+  
+   <h3>Entrada de Dados.... </h3>
+   <br/><br/>
+Codigo
+<br/>
+<input type="text" name="codigo" id="codigo" [(ngModel)]="usuario.codigo">
+<br/>Login<br/>
+<input type="text" name="login" id="login" [(ngModel)]="usuario.login">
+<br/>Senha<br/>
+<input type="password" name="senha" id="senha" [(ngModel)]="usuario.senha">
+<br/>
+
+<button  (click)="enviar(usuario)">Armazenar</button>
+
+<br/>
+<h3>Radio... </h3>
+<br/>
+<label [class.selected]="r1.checked">
+<input #r1 type="radio" name="r" value="one" (change)="logRadio(r1)">One
+</label>
+<label [class.selected]="r2.checked">
+<input #r2 type="radio" name="r" value="two" (change)="logRadio(r2)">Two
+</label>
+<label [class.selected]="r3.checked">
+<input #r3 type="radio" name="r" value="three" (change)="logRadio(r3)">Three  
+</label>    
+
+<h2>Log=<button (click)="log=''">Clear</button></h2>
+<pre>{{log}}</pre>
+
+
+
+</div>
